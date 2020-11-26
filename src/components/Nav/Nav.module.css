@@ -1,0 +1,29 @@
+.navList {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  padding: 0;
+  /* width: 900px; */
+  list-style: none;
+
+  height: 50px;
+  background-color: #444;
+  margin-bottom: 30px;
+}
+
+.navLink {
+  padding: 0 20px;
+  line-height: 50px;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+/* .navLink:first-of-type {
+  padding-left: 0;
+} */
+
+.navLinkActive {
+  color: #fe6348;
+}
