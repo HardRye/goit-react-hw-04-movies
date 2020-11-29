@@ -17,9 +17,7 @@
     "eject": "react-scripts eject",
     "lint": "eslint src/**/*.js",
     "lint:fix": "eslint src/**/*.js --fix",
-    "lint:format": "prettier src/**/*.{js,css,json} --write",
-    "predeploy": "npm run build",
-    "deploy": "netlify -d build"
+    "lint:format": "prettier src/**/*.{js,css,json} --write"
   },
   "eslintConfig": {
     "extends": "react-app"
