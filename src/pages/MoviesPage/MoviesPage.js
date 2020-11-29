@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import queryString from 'query-string';
 import PropTypes from 'prop-types';
-import FilmsList from '../components/FilmsList/FilmsList';
-import { getMovieByQuery } from '../services/moviesAPI';
+import FilmsList from '../../components/FilmsList/FilmsList';
+import { getMovieByQuery } from '../../services/moviesAPI';
+
+import styles from './MoviesPage.module.css';
 
 export default class MoviesPage extends Component {
   static propTypes = {
@@ -65,22 +67,25 @@ export default class MoviesPage extends Component {
     const { location } = this.props;
 
     return (
-      <>
+      <div className={styles.container}>
         <form onSubmit={this.handleSubmit}>
-          <label htmlFor="search">
+          <div className={styles.wrapper}>
+            <button type="submit" className={styles.button}>
+              <i className="fa fa-search" />
+            </button>
+
             <input
               type="text"
               id="search"
+              className={styles.input}
               value={value}
               onChange={this.onChange}
             />
-          </label>
-
-          <button type="submit">Search</button>
+          </div>
         </form>
 
         <FilmsList movies={movies} location={location} />
-      </>
+      </div>
     );
   }
 }

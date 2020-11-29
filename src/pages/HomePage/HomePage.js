@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import FilmsList from '../components/FilmsList/FilmsList';
-import { getTrending } from '../services/moviesAPI';
+import FilmsList from '../../components/FilmsList/FilmsList';
+import { getTrending } from '../../services/moviesAPI';
+
+import styles from './HomePage.module.css';
 
 export default class HomePage extends Component {
   static propTypes = {
@@ -24,8 +26,8 @@ export default class HomePage extends Component {
     // console.log(location);
 
     return (
-      <div style={{ marginLeft: '20px' }}>
-        <h1>Trending today</h1>
+      <div className={styles.container}>
+        <h1 className={styles.title}>Trending today</h1>
 
         <FilmsList movies={movies} location={location} />
       </div>

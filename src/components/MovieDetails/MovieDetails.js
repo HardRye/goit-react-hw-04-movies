@@ -1,25 +1,43 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from './MovieDetails.module.css';
 
-const posterPath = `https://image.tmdb.org/t/p/w300`;
+const backdropPath = `https://image.tmdb.org/t/p/original`;
 
 const MovieDetails = ({ movie = [] }) => {
+  const posterSrc = movie.backdrop_path
+    ? `${backdropPath}${movie.backdrop_path}`
+    : null;
+  const filmTitle = movie.title ? movie.title : movie.name;
+  const filmDate = movie.release_date
+    ? movie.release_date
+    : movie.first_air_date;
+  const filmYear = new Date(filmDate).getFullYear();
+
   return (
-    <div style={{ display: 'flex' }}>
-      <img src={`${posterPath}${movie.poster_path}`} alt="" />
-      <div style={{ marginLeft: '20px' }}>
-        <h2>
-          {`${movie.title ? movie.title : movie.name} (${new Date(
-            movie.release_date,
-          ).getFullYear()})`}
-        </h2>
-        <p>User score: {movie.vote_average}</p>
-        <h3>Overview</h3>
+    <div className={styles.wrapper}>
+      <div className={styles.imageWrapper}>
+        {posterSrc && <img src={posterSrc} alt="" className={styles.image} />}
+      </div>
+      <div>
+        <div className={styles.titleWrapper}>
+          <h2 className={styles.title}>{`${filmTitle} (${filmYear})`}</h2>
+          <p className={styles.score}>
+            User score: {movie.vote_average}
+            &ensp;
+            <span className={styles.star}>
+              <i className="fa fa-star-half-o" aria-hidden="true" />
+            </span>
+          </p>
+        </div>
+        <h4>Overview</h4>
         <p>{movie.overview}</p>
         <h4>Genres</h4>
-        <ul>
+        <ul className={styles.genresList}>
           {movie.genres.map(g => (
-            <li key={g.id}>{g.name}</li>
+            <li key={g.id} className={styles.genresItem}>
+              {g.name}
+            </li>
           ))}
         </ul>
       </div>

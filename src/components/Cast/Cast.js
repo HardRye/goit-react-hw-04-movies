@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { getMovieCastById } from '../services/moviesAPI';
+import { getMovieCastById } from '../../services/moviesAPI';
+import styles from './Cast.module.css';
 
-const posterPath = `https://image.tmdb.org/t/p/w92`;
+const posterPath = `https://image.tmdb.org/t/p/original`;
 
 export default class Cast extends Component {
   static propTypes = {
@@ -32,12 +33,16 @@ export default class Cast extends Component {
     return (
       <>
         {cast && (
-          <ul>
+          <ul className={styles.list}>
             {cast.map(c => (
-              <li key={c.id}>
-                {c.profile_path && (
-                  <img src={`${posterPath}${c.profile_path}`} alt="" />
-                )}
+              <li key={c.id} className={styles.item}>
+                <div className={styles.imageWrapper}>
+                  <img
+                    src={`${posterPath}${c.profile_path}`}
+                    alt=""
+                    className={styles.image}
+                  />
+                </div>
                 <h4>{c.name}</h4>
                 {c.character && <p>Character: {c.character}</p>}
               </li>

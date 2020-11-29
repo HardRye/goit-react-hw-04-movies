@@ -1,0 +1,28 @@
+.container {
+  width: 90%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 auto 30px;
+}
+
+.input {
+  width: calc(100% - 30px);
+  padding: 0;
+  border: none;
+  line-height: 30px;
+  font-size: 25px;
+}
+
+.button {
+  padding: 0 9px;
+  width: 30px;
+  background-color: #fff;
+  border: none;
+}

@@ -1,0 +1,52 @@
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.imageWrapper {
+  width: 100%;
+  min-height: 50vh;
+  background-color: #fff;
+  background-image: url('../../assets/backdrop.jpg');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  align-items: center;
+}
+
+.titleWrapper {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+
+.title {
+  margin: 0;
+}
+
+.score {
+  margin: 0;
+  line-height: 32px;
+}
+
+.star {
+  color: rgb(211, 158, 0);
+}
+
+.genresList {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+}
+
+.genresItem {
+  margin-right: 10px;
+}

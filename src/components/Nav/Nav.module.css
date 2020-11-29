@@ -1,14 +1,19 @@
+.container {
+  margin: 0 auto 30px;
+  padding: 0;
+  height: 50px;
+  background-color: #444;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 2px 4px -1px,
+    rgba(0, 0, 0, 0.14) 0px 4px 5px 0px, rgba(0, 0, 0, 0.12) 0px 1px 10px 0px;
+}
+
 .navList {
   display: flex;
   flex-wrap: wrap;
   margin: 0 auto;
   padding: 0;
-  /* width: 900px; */
+  width: 90%;
   list-style: none;
-
-  height: 50px;
-  background-color: #444;
-  margin-bottom: 30px;
 }
 
 .navLink {
@@ -20,9 +25,9 @@
   text-transform: uppercase;
 }
 
-/* .navLink:first-of-type {
+.navLink:first-of-type {
   padding-left: 0;
-} */
+}
 
 .navLinkActive {
   color: #fe6348;
