@@ -1,6 +1,9 @@
 {
   "name": "goit-react-hw-04-movies",
   "version": "0.1.0",
+  "engines": {
+    "node": "12.18.3"
+  },
   "private": true,
   "dependencies": {
     "axios": "^0.21.0",
@@ -15,9 +18,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
-    "lint:format": "prettier src/**/*.{js,css,json} --write"
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,22 +36,7 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-prettier": "^6.12.0",
-    "eslint-plugin-import": "^2.22.1",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.21.3",
-    "husky": "^3.1.0",
-    "lint-staged": "^9.5.0",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2"
-  },
-  "lint-staged": {
-    "src/**/*.js": [
-      "prettier --write",
-      "eslint --fix",
-      "git add"
-    ]
   }
 }
